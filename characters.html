@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valheim: Larga vida a La Reina | Tesis | Personajes</title>
+    <link rel="stylesheet" href="./characters.css" />
+  </head>
+  <body>
+    <div class="logo-container">
+      <img
+        id="logo"
+        src="./Images/Logo_valheim.webp"
+        alt="Logo de Valheim - Larga vida a La Reina"
+      />
+    </div>
+    <img
+      id="characters-logo"
+      src="./Images/personajes_logo.png"
+      alt="Logo de Personajes"
+    />
+    <main>
+      <article class="char-container">
+        <section class="char-overlay">
+          <div class="corner-tr"></div>
+          <div class="corner-bl"></div>
+          <div class="rune-band"></div>
+          <img class="char-img" src="./Images/EinarVsModer.webp" alt="Einar" />
+        </section>
+        <img
+          class="character"
+          src="./Images/Einar-removebg-preview.png"
+          alt=""
+        />
+        <span class="char-name">Einar</span>
+      </article>
+      <article class="char-container">
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="rune-band"></div>
+        <img class="char-img" src="./Images/EinarVsModer.webp" alt="Runa" />
+        <img
+          class="character"
+          src="./Images/upscalemedia-transformed.png"
+          alt=""
+        />
+        <span class="char-name">Runa</span>
+      </article>
+      <article class="char-container">
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="rune-band"></div>
+        <img class="char-img" src="./Images/EinarVsModer.webp" alt="Hel" /><img
+          class="character"
+          src="./Images/Einar-removebg-preview.png"
+          alt=""
+        />
+        <span class="char-name">Hel</span>
+      </article>
+      <article class="char-container">
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="rune-band"></div>
+        <img
+          class="char-img"
+          src="./Images/EinarVsModer.webp"
+          alt="Sombra"
+        /><img
+          class="character"
+          src="./Images/Einar-removebg-preview.png"
+          alt=""
+        />
+        <span class="char-name">Sombra</span>
+      </article>
+      <article class="char-container">
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="rune-band"></div>
+        <img
+          class="char-img"
+          src="./Images/EinarVsModer.webp"
+          alt="Moder"
+        /><img
+          class="character"
+          src="./Images/Einar-removebg-preview.png"
+          alt=""
+        />
+        <span class="char-name">Moder</span>
+      </article>
+      <article class="char-container">
+        <div class="corner-tr"></div>
+        <div class="corner-bl"></div>
+        <div class="rune-band"></div>
+        <img
+          class="char-img"
+          src="./Images/EinarVsModer.webp"
+          alt="Fader"
+        /><img
+          class="character"
+          src="./Images/Einar-removebg-preview.png"
+          alt=""
+        />
+        <span class="char-name">Fader</span>
+      </article>
+    </main>
+    <div class="presentation hidden">
+      <div class="presentation__text presentation__text hidden"></div>
+      <div class="presentation__card"></div>
+      <div class="presentation__character"></div>
+    </div>
+    <section class="modal hidden">
+      <div class="overlay hidden"></div>
+    </section>
+    <script>
+      const RUNES = [
+        "ᚠ",
+        "ᚢ",
+        "ᚦ",
+        "ᚨ",
+        "ᚱ",
+        "ᚲ",
+        "ᚷ",
+        "ᚹ",
+        "ᚺ",
+        "ᚾ",
+        "ᛁ",
+        "ᛃ",
+        "ᛇ",
+        "ᛈ",
+        "ᛉ",
+        "ᛊ",
+        "ᛏ",
+        "ᛒ",
+        "ᛖ",
+        "ᛗ",
+        "ᛚ",
+        "ᛜ",
+        "ᛞ",
+        "ᛟ",
+      ];
+
+      document.querySelectorAll(".rune-band").forEach((band) => {
+        const count = Math.floor(band.offsetWidth / 13) + 4;
+        band.innerHTML = Array.from({ length: count }, (_, i) => {
+          const r = RUNES[Math.floor(Math.random() * RUNES.length)];
+          return `<span style="animation-delay:${(i * 0.11).toFixed(2)}s">${r}</span>`;
+        }).join("");
+      });
+    </script>
+    <script src="characters.js"></script>
+  </body>
+</html>
