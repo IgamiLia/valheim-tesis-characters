@@ -425,7 +425,9 @@ main {
 .presentation__card {
   height: 90%;
   min-width: 20vw;
+  max-height: 50svh;
 }
+
 .presentation__text {
   color: var(--gold-light);
   font-size: 2rem;
@@ -527,6 +529,7 @@ main {
 
   .modal-card {
     max-width: 28vw !important;
+    max-height: 50svh;
   }
 
   .char-traits li {
