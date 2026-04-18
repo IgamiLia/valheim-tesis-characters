@@ -479,6 +479,7 @@ main {
   will-change: transform;
   backface-visibility: hidden;
 }
+
 .brightness {
   filter: brightness(0.1);
 }
@@ -492,7 +493,14 @@ main {
 .fixed {
   position: fixed;
 }
-
+#smoke {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: -1;
+}
 /* ─── Responsive: Laptop (≤ 1200px) ─────────── */
 @media (max-width: 1200px) {
   #logo {
@@ -662,5 +670,8 @@ main {
 
   .rune-band span {
     font-size: 13px;
+  }
+  #smoke {
+    display: none;
   }
 }

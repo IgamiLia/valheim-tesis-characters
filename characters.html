@@ -112,6 +112,7 @@
     <section class="modal hidden">
       <div class="overlay hidden"></div>
     </section>
+    <div id="smoke"></div>
     <script>
       const RUNES = [
         "ᚠ",
@@ -149,5 +150,14 @@
       });
     </script>
     <script src="characters.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script src="three.js" type="module"></script>
   </body>
 </html>
