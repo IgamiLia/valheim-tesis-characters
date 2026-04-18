@@ -58,6 +58,16 @@ body {
   place-items: center;
   width: 100svw;
   min-height: 100svh;
+  cursor:
+    url("./Cursor/cursor_fixed.cur") 0 0,
+    auto;
+}
+
+@keyframes page-fade-in {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 body::before {
@@ -95,6 +105,10 @@ body::before {
   width: 100%;
   display: flex;
   justify-content: center;
+  transform: translateY(5%);
+  opacity: 0;
+  animation: page-fade-in 1s ease forwards;
+  animation-delay: 0.2s;
 }
 
 #logo {
@@ -108,6 +122,10 @@ body::before {
   width: 30vw;
   height: auto;
   filter: drop-shadow(0 0 4px #000000) drop-shadow(0 0 8px #6d3718);
+  transform: translateY(5%);
+  opacity: 0;
+  animation: page-fade-in 1s ease forwards;
+  animation-delay: 0.3s;
 }
 
 /* ─── Grid de personajes ─────────────────────── */
@@ -117,6 +135,10 @@ main {
   grid: repeat(2, 1fr) / repeat(3, 1fr);
   gap: 8rem;
   padding-bottom: 4rem;
+  transform: translateY(5%);
+  opacity: 0;
+  animation: page-fade-in 1s ease forwards;
+  animation-delay: 0.4s;
 }
 
 /* ─── Tarjeta de personaje ───────────────────── */
@@ -673,5 +695,81 @@ main {
   }
   #smoke {
     display: none;
+  }
+}
+
+/* ─── Botón de música ────────────────────────── */
+.music-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 14, 4, 0.95) 0%,
+    rgba(40, 30, 15, 0.9) 100%
+  );
+  border: 2px solid var(--gold-dark);
+  border-radius: 50%;
+  color: var(--gold);
+  cursor: pointer;
+  box-shadow:
+    0 0 0 1px rgba(10, 9, 6, 0.8),
+    0 0 15px 3px rgba(130, 103, 40, 0.3),
+    inset 0 1px 0 rgba(220, 195, 120, 0.1);
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  border-color: var(--gold);
+  box-shadow:
+    0 0 0 1px rgba(10, 9, 6, 0.8),
+    0 0 25px 5px rgba(180, 151, 76, 0.5),
+    inset 0 1px 0 rgba(220, 195, 120, 0.2);
+  transform: translateY(-2px);
+}
+
+.music-btn svg {
+  width: 22px;
+  height: 22px;
+  transition: all 0.3s ease;
+}
+
+/* Por defecto muestra pause (música sonando) */
+.music-btn .icon-pause {
+  display: block;
+}
+
+.music-btn .icon-play {
+  display: none;
+}
+
+/* Cuando está pausado, muestra play */
+.music-btn.paused .icon-pause {
+  display: none;
+}
+
+.music-btn.paused .icon-play {
+  display: block;
+}
+
+/* Responsive botón música */
+@media (max-width: 600px) {
+  .music-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+  }
+
+  .music-btn svg {
+    width: 18px;
+    height: 18px;
   }
 }
